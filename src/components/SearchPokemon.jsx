@@ -7,7 +7,8 @@ export default function SearchPokemon() {
 
     const [searchText, setsearchText] = useState('')
     const [allPokemons, setallPokemons] = useState([])
-    const [listIdPokemons, setlistIdPokemons] = useState([15,2,3,4,5,6,70,8,90,10])
+    const [listIdPokemons, setlistIdPokemons] = useState([145,2,146,4,5,6,70,8,90,10])
+    const [noResults, setnoResults] = useState(true)
     const [errorSearch, seterrorSearch] = useState(false)
 
     useEffect(() => {
@@ -30,8 +31,13 @@ export default function SearchPokemon() {
             arr_filter.forEach(element => {
                 listId.push(parseInt(element.url.split('pokemon', 2)[1].replace("/", '').replace("/",'')))
             });
+            if (listIdPokemons.length === 0){
+                setnoResults(false)
+            }else {
+                setnoResults(true)
+            }
             setlistIdPokemons(listId)
-            console.log(listIdPokemons)
+
         }
         else{
             seterrorSearch(true)
@@ -66,7 +72,13 @@ export default function SearchPokemon() {
                     <></>
                 )}
             </div>
-            <ListPokemons ids={listIdPokemons}></ListPokemons>
+            {
+                noResults ? (
+                    <ListPokemons ids={listIdPokemons}></ListPokemons>
+                ):(
+                    <p style={{textAlign: 'center'}}>No hay resultados</p>
+                )
+            }
         </>
     )
 }

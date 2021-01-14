@@ -2,6 +2,7 @@ import axios from 'axios'
 import React, { useEffect, useState } from 'react'
 import { useParams } from 'react-router-dom'
 import foto from '../not_foto.png'
+import IsLegendary from './IsLegendary'
 import Types from './Types'
 
 
@@ -44,7 +45,7 @@ export default function DetailPokemon(props) {
                         </div>
                         <p>Peso: {pokemon.weight}</p>
                         <p>Altura: {pokemon.height}</p>
-
+                        <IsLegendary specs={pokemon.species.url}></IsLegendary>
                     </div>
                 </div>
             </div>

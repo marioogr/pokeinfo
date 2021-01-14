@@ -7,7 +7,7 @@ function App() {
 
   return (
     <div className="App">
-        <h2 className='textColor'>PokeInfo</h2>
+        <h2 className='textColor tittle'>PokeInfo</h2>
         <Switch>
           <Route path='/pokemon/:id' exact component={DetailPokemon}>
           </Route>

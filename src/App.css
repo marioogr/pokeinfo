@@ -5,6 +5,9 @@
 .textColor { 
   color: orange;
 }
+.tittle {
+  margin-bottom: 2rem;
+}
 
 .button{
   background-color: rgb(255, 80, 0);
@@ -34,6 +37,14 @@
 a {
   outline: none;
   text-decoration: none;
+  color: black;
+}
+
+a:active {
+  color: rgb(255, 80, 0);
+}
+
+a:visited {
   color: black;
 }
 
