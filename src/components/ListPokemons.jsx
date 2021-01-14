@@ -12,8 +12,14 @@ export default function ListPokemons(props) {
             setloanding(false)
             for (let i = 0; i < props.ids.length; i++) {
                 const url =  'https://pokeapi.co/api/v2/pokemon/'+ props.ids[i]
-                const result = await axios(url)
-                arr.push(result.data)
+                try {
+                    const result = await axios(url)
+                    arr.push(result.data)
+
+                } catch (error) {
+                    console.log("error")
+                }
+                
             }
             setpokemons(arr)
             setloanding(true)
