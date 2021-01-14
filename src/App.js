@@ -9,10 +9,9 @@ function App() {
     <div className="App">
         <h2 className='textColor'>PokeInfo</h2>
         <Switch>
-          <Route path='/pokemon/:id' exact>
-            <DetailPokemon></DetailPokemon>
+          <Route path='/pokemon/:id' exact component={DetailPokemon}>
           </Route>
-          <Route exact path='/pokeinfo'>
+          <Route exact path='/'>
             <SearchPokemon></SearchPokemon>
           </Route>
         </Switch>
