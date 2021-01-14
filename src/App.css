@@ -8,6 +8,7 @@
 
 .button{
   background-color: rgb(255, 80, 0);
+  font-weight: bold;
   border: none;
   border-radius: 20px;
   outline: none;
@@ -30,7 +31,23 @@
   
 }
 
+a {
+  outline: none;
+  text-decoration: none;
+  color: black;
+}
 
-::placeholder { /* Chrome, Firefox, Opera, Safari 10.1+ */
+a:link {
+  color: black;
+}
+
+a:focus {
+  color:rgb(255, 80, 0);
+}
+a:hover {
+  border-bottom: 1px solid;
+  background: rgb(243, 243, 243);
+}
+::placeholder { 
   color: rgb(255, 225, 168);
 }
