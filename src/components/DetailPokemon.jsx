@@ -10,6 +10,7 @@ import Types from './Types'
 export default function DetailPokemon(props) {
 
     const [pokemon, setpokemon] = useState(null)
+
     const {id} = useParams()
  
     useEffect(() => {
@@ -17,7 +18,9 @@ export default function DetailPokemon(props) {
             const result = await axios(`https://pokeapi.co/api/v2/pokemon/${id}`)
             setpokemon(result.data)
         }
+        
         getInfoPokemon()
+
     }, [id])
 
     const renderCardPokemon = () => {

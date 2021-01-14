@@ -1,6 +1,7 @@
 import React, {useState, useEffect} from 'react'
 import axios from 'axios'
 import ListPokemons from './ListPokemons'
+import Loading from './Loading'
 
 
 export default function SearchPokemon() {
@@ -54,6 +55,8 @@ export default function SearchPokemon() {
     return (
         <>
             <h6>Busca aquí el Pokémon que quieras</h6>
+            {loading?(<Loading></Loading>):null}
+
             <div className='flex-column bd-highlight mt-3 mb-3'>
                 <input 
                     className='inputText mr-3' 
