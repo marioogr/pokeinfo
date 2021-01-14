@@ -1,8 +1,9 @@
 import axios from 'axios'
 import React, { useEffect, useState } from 'react'
-import { useParams } from 'react-router-dom'
+import { Link, useParams } from 'react-router-dom'
 import foto from '../not_foto.png'
 import IsLegendary from './IsLegendary'
+import Loading from './Loading'
 import Types from './Types'
 
 
@@ -34,7 +35,12 @@ export default function DetailPokemon(props) {
                         />
                     ):
                     (
-                        <img src={foto} className="card-img-top" alt="..."/>
+                        <img 
+                            src={foto} 
+                            className="mx-auto d-block" 
+                            alt="notfound"
+                            style={{height: '20rem', width: '20rem'}}
+                        />
                     )
 
                 }
@@ -57,12 +63,17 @@ export default function DetailPokemon(props) {
         {
             pokemon ? (
                 <>
+                    <Link
+                        to='/'
+                        className='tittle' 
+                        style={{marginLeft: '1rem', marginTop: '1rem', fontSize: '20px'}}
+                    >
+                        Volver
+                    </Link>
                     {renderCardPokemon()}
                 </>
             ):
-                <div className="spinner-border" role="status">
-                    <span className="visually-hidden">Loading...</span>
-                </div>
+                <Loading></Loading>
         }
         </>
     )

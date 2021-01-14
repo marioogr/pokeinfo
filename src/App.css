@@ -3,7 +3,7 @@
 }
 
 .textColor { 
-  color: orange;
+  color:rgb(255, 80, 0);
 }
 .tittle {
   margin-bottom: 2rem;
@@ -20,6 +20,8 @@
   padding-right: 20px;
   height: 35px; 
 }
+
+
 
 .inputText {
   background-color: rgb(206, 206, 206);
